@@ -14,7 +14,7 @@ class OAuth2 {
     $username = getenv('database.default.username');
     $password = getenv('database.default.password');
 
-    $storegae = new Pdo(['dsn' => $dsn, 'username' => $username, 'password' => $password]);
+  $storage = new Pdo(['dsn' => $dsn, 'username' => $username, 'password' => $password]);
     $this->server = new \OAuth2\Server($storage);
     $this->server->addGrantType(new \OAuth2\GrantType\UserCredentials($storage));
   }
