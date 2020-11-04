@@ -1,10 +1,13 @@
-<?php namespace App\Controllers;
+<?php
 
-use \App\Libraries\OAuth2;
+namespace App\Controllers;
+
+use \App\Libraries\Oauth;
 use \OAuth2\Request;
 use CodeIgniter\API\ResponseTrait;
+use App\Models\UserModel;
 
-class Users extends BaseController
+class User extends BaseController
 {
   use ResponseTrait;
 
@@ -12,6 +15,7 @@ class Users extends BaseController
   {
     $oauth = new Oauth();
     $request = new Request();
+
     $respond = $oauth->server->handleTokenRequest($request->createFromGlobals());
     $code = $respond->getStatusCode();
     $body = $request->getResponseBody();
