@@ -1,7 +1,7 @@
-<div class="container">
+<div class="footer">
   <div class="row bg-secondary">
     <div class="col-3 m-4 text-center text-no-wrap">
-      <img src="<?= base_url() . '/assets/img/rtin-logo.png' ?>" height="60px" alt=""><br>
+      <img src="<?= base_url() . '/assets/img/rtin_logo.png' ?>" height="60px" alt=""><br>
       <small>&copy; 2020 murrik.com</small>
     </div>
     <div class="float-right text-light col mt-4">
