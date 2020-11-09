@@ -23,7 +23,7 @@ class Animal extends ResourceController
         return $this->failNotFound('No animal found');
       }
     }
-    $data['animal'] = $model->orderBy('id', 'DESC')->findAll();
+    $data['animal'] = $model->orderBy('id', 'ASC')->findAll();
     return $this->respond($data);
   }
 
@@ -33,14 +33,16 @@ class Animal extends ResourceController
     $model = new AnimalsModel();
     $data = [
       'name' => $this->request->getVar('name'),
-      'email'  => $this->request->getVar('email'),
+      'type'  => $this->request->getVar('type'),
+      'birth_date' => $this->request->getVar('birth_date'),
+      'chip_number'  => $this->request->getVar('chip_number'),
     ];
     $model->insert($data);
     $response = [
       'status'   => 201,
       'error'    => null,
       'messages' => [
-        'success' => 'Employee created successfully'
+        'success' => 'Animal created successfully'
       ]
     ];
     return $this->respondCreated($response);
@@ -64,18 +66,22 @@ class Animal extends ResourceController
     $model = new AnimalsModel();
     $id = $this->request->getVar('id');
     // TODO: animals update logic
-    // $data = [
-    //   'name' => $this->request->getVar('name'),
-    //   'email'  => $this->request->getVar('email'),
-    // ];
-    // $model->update($id, $data);
-    // $response = [
-    //   'status'   => 200,
-    //   'error'    => null,
-    //   'messages' => [
-    //     'success' => 'Employee updated successfully'
-    //   ]
-    // ];
+    $data = [
+      // 'name' => $this->request->getVar('name'),
+      // 'type'  => $this->request->getVar('type'),
+      // 'birth_date' => $this->request->getVar('birth_date'),
+      'chip_number'  => $this->request->getVar('chip_number'),
+      'female' => $this->request->getVar('female'),
+    ];
+
+    $model->update($id, $data);
+    $response = [
+      'status'   => 200,
+      'error'    => null,
+      'messages' => [
+        'success' => 'Animal updated successfully'
+      ]
+    ];
     return $this->respond($response);
   }
 
