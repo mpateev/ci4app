@@ -48,7 +48,7 @@ Vagrantfile
 #-------------------------
 # Temporary Files
 #-------------------------
-temp/
+temp
 writable/cache/*
 !writable/cache/index.html
 
@@ -126,3 +126,5 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
+# node.js modules
+node_modules
