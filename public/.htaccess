@@ -43,6 +43,10 @@ Options All -Indexes
     ErrorDocument 404 index.php
 </IfModule>
 
+<IfModule mod_headers.c>
+	Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
 # Disable server signature start
-    ServerSignature Off
+ServerSignature Off
 # Disable server signature end

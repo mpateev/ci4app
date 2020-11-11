@@ -12,7 +12,7 @@ class AnimalsModel extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['type', 'female', 'name', 'birth_data', 'vaccine', 'chip_number', 'chip_date'];
+    protected $allowedFields = ['type', 'female', 'name', 'birth_data', 'title', 'summary', 'text', 'image', 'vaccine', 'chip_number', 'chip_date'];
 
     protected $useTimestamps = false;
     protected $createdField  = 'created_at';
